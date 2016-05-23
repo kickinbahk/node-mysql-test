@@ -15,8 +15,11 @@ connection.connect()
 connection.query(
   'SLECT "foo" AS first_field, "bar" AS second_field',
   function (err, results, fields) {
-    console.log(err)
-    console.log(results)
+    if (err) {
+      console.log('A database error has occured')
+    } else {
+      console.log(results)
+    }
     connection.end()
   }
 )
