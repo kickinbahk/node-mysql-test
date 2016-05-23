@@ -7,14 +7,15 @@ var connection = mysql.createConnection({
   user: 'root',
   password: 'root',
   database: 'test',
-  port: '3306',
+  port: '3306'
 })
 
 connection.connect()
 
 connection.query(
-  'SELECT "foo" AS first_field, "bar" AS second_field',
+  'SLECT "foo" AS first_field, "bar" AS second_field',
   function (err, results, fields) {
+    console.log(err)
     console.log(results)
     connection.end()
   }
